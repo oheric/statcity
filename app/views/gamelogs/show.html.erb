@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+	<div>
+
+<style type ="text/css">
+table, th, td{
+	border: 1px solid black
+}
+td {
+	padding: 8px;
+}
+
+</style>
+
+<table>
+<thead>
+	<tr>
+		<th>Date</th>
+		<th>Dat</th>
+	
+		<th>Opp.</th>
+		<th>Result</th>
+		<th>Score</th>
+		<th>Min</th>
+		<th>FGM</th>
+		<th>FGA</th>
+		<th>FG%</th>
+		<th>3PM</th>
+		<th>3PA</th>
+		<th>3PT%</th>
+		<th>FTM</th>
+		<th>FTA</th>
+		<th>FT%</th>
+		<th>Off. Reb</th>
+		<th>Def. Reb</th>
+		<th>Reb</th>
+		<th>Ast</th>
+		<th>TO</th>
+		<th>Stl</th>
+		<th>Blk</th>
+		<th>PF</th>
+		<th>Pts</th>
+	</tr>
+</thead>
+
+<% require 'nokogiri' %>
+<% require 'open-uri' %>
+<% url = "http://sports.yahoo.com/nba/players/3118/gamelog/" %>
+<% doc = Nokogiri::HTML(open(url)) %>
+<% stats = [] %>
+
+<% doc.css(".data-container").each do |dc| %>
+<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
+
+<tbody>
+<tr>
+	<% stats[0].each do |i|%>
+		<% i.each do |b|%>
+			<td><%=b %></td>
+	
+	
+
+
+		<%end %>
+</tr>
+	<% end %>
+	
+<!-- 	<td><%=stats[0][0][0] %> <%=stats[0][0][1] %></td> -->
+
+
+
+		
+
+	
+<% end %>
+
+</tbody>
+</table>
+</div>
+<div>
+<%= doc.css("h1, .player-info").text%>
+</div>
+<div>
+<%= doc.css(".bio").text %>
+</div>
+<div>
+<%= doc.css(".stats li").text %>
+</div>
+<div>
+<%= doc.css(".player-team-bg-color a img") %>
+	</div>
+	<div>
+		<%= doc.css(".player-image img") %>
+	</div>
+	<div>
+	
+
+</body>
+</html>
