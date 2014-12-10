@@ -20,4 +20,19 @@ def show
 	# @gamelogstats = @gamelogscraper.get_class_items('.data-container')
 end
 
+def playerlog
+	require 'nokogiri'
+	require 'open-uri'
+
+end
+
+def playerusage
+	require 'nokogiri'
+	require 'open-uri'
+end
+
+def pace
+	require 'nokogiri'
+	require 'open-uri'
+end
 end

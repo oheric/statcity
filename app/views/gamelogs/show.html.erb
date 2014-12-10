@@ -1,124 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<title></title>
 </head>
 <body>
 
-<style type ="text/css">
-table, th, td{
-	border: 1px solid black
-}
-td {
-	padding: 8px;
-}
+	<style type="text/css">
+		#playerheading{
+			font-size: 20px;
+			color: green;
+			font-family: Verdana;
+		}
+	</style>
 
-#playerstats{
+	<% require 'nokogiri' %>
+	<% require 'open-uri' %>
 	
-	color: green;
-}
+	<% url = "http://fleaflicker.com/nba/news" %>
+	<% doc = Nokogiri::HTML(open(url)) %>
 
-#playerinfo{
-	font-size: 24px;
-	color: red;
-}
 
-#bio{
-	font-family: Verdana;
-}
+	<% doc.css(".list-group-item").each do |lg| %>
+	<div id="playerheading"><%= lg.at_css(".list-group-item-heading").text %></div>
+	<div><%= lg.at_css(".list-group-item-text").text %></div>
+	<%end%>
 
-#avgstats{
-	font-size: 20px;
-	color: blue;
-	font-family: Verdana;
-}
+	
 
-</style>
-
-<% require 'nokogiri' %>
-<% require 'open-uri' %>
-<% url = "http://sports.yahoo.com/nba/players/3118/gamelog/" %>
-<% doc = Nokogiri::HTML(open(url)) %>
-<% stats = [] %>
-
-<% doc.css(".data-container").each do |dc| %>
-<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
-<%end%>
-
-<div id="playerinfo">
-<%= doc.css(".player-info").text%>
-</div>
-<div id="bio">
-<%= doc.css(".bio").text %>
-</div>
-<div id="avgstats">
-<%= doc.css(".stats li").text %>
-</div>
-<div>
-<img src="http://l.yimg.com/os/mit/media/m/base/images/transparent-649ba6f.png" style="background-image:url('http://l.yimg.com/j/assets/i/us/sp/v/nba/teams/83/70x70/lal.png');" width="70" height="70" alt="Kobe Bryant" title="" class="team-logo lzbg">
-</div>
-<div>
-<img src="http://l.yimg.com/os/mit/media/m/base/images/transparent-649ba6f.png" style="background-image:url('http://l2.yimg.com/bt/api/res/1.2/jBsds5goQSFEtpS12wBETQ--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTIzMDtxPTc1O3c9MzQ1/https://sp.yimg.com/j/assets/i/us/sp/v/nba_cutout/players_l/20141107/3118.png');" width="345" height="230" alt="Kobe Bryant" title="" class="photo lzbg">
-</div>
-<div>
-<% doc.css(".player-team-bg-color a img") %>
+<!-- x -->
+	<!-- <div id="bio">
+	<%= doc.css(".bio").text %>
 	</div>
-	<div>
-		<%= doc.css(".player-image img") %>
-	</div>
-
-<div id ="playerstats">
-<table>
-<thead>
-	<tr>
-		<th>Date</th>
-		<th>Dat</th>
-	
-		<th>Opp.</th>
-		<th>Result</th>
-		<th>Score</th>
-		<th>Min</th>
-		<th>FGM</th>
-		<th>FGA</th>
-		<th>FG%</th>
-		<th>3PM</th>
-		<th>3PA</th>
-		<th>3PT%</th>
-		<th>FTM</th>
-		<th>FTA</th>
-		<th>FT%</th>
-		<th>Off. Reb</th>
-		<th>Def. Reb</th>
-		<th>Reb</th>
-		<th>Ast</th>
-		<th>TO</th>
-		<th>Stl</th>
-		<th>Blk</th>
-		<th>PF</th>
-		<th>Pts</th>
-	</tr>
-</thead>
-
-
-
-<tbody>
-<tr>
-	<% stats[0].each do |i|%>
-		<% i.each do |b|%>
-			<td><%=b %></td>
-	
-	
-	<% end %>
-	
-</tr>
-<% end %>
-
-</tbody>
-</table>
-</div>
-
-	
-	
-
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
 </body>
 </html>

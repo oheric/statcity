@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<style type="text/css">
+
+	table{
+		text-align: center;
+	}
+
+	td{
+		padding: 4px;
+	}
+		
+		
+	</style>
+
+	<% require 'nokogiri' %>
+	<% require 'open-uri' %>
+	
+	<% url = "http://espn.go.com/nba/hollinger/teamstats/_/sort/paceFactor" %>
+	<% doc = Nokogiri::HTML(open(url)) %>
+
+	
+	<% paceodd = [] %>
+	<% paceeven = [] %>
+	
+	<% doc.css(".oddrow").each do |a| %>
+	<% a.css("td").each do |b| %>
+	<% paceodd.push(b.text) %>
+	
+	<% end %>
+	<% end %>
+
+	<% doc.css(".evenrow").each do |a| %>
+	<% a.css("td").each do |b| %>
+	<% paceeven.push(b.text) %>
+	
+	<% end %>
+	<% end %>
+
+	<% paceodd = paceodd.each_slice(12).to_a %>
+
+	<% paceeven = paceeven.each_slice(12).to_a %>
+
+
+
+<div>
+	<table>
+
+		<thead>
+			<tr>
+			<th>Rank</th>
+			<th>Team</th>
+			<th>Pace</th>
+			<th>AST</th>
+			<th>TO</th>
+			<th>ORR</th>
+			<th>DRR</th>
+			<th>REBR</th>
+			<th>EFF FG%</th>
+			<th>TS%</th>
+			<th>OFF EFF</th>
+			<th>DEF EFF</th>
+		</tr>
+			
+		</thead>
+		<tbody>
+<tr>
+	<% paceodd.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+	
+	
+</tr>
+	<% end %>
+<tr>
+	<% paceeven.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+
+
+	
+	
+</tr>
+	<% end %>
+
+	
+
+<!-- x -->
+	<!-- <div id="bio">
+	<%= doc.css(".bio").text %>
+	</div>
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
+</tbody>
+</table>
+</div>
+</body>
+</html>

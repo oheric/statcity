@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<style type="text/css">
+
+	table{
+		text-align: center;
+	}
+
+	td{
+		padding: 4px;
+	}
+		
+	</style>
+
+	<% require 'nokogiri' %>
+	<% require 'open-uri' %>
+	
+	<% url = "http://insider.espn.go.com/nba/hollinger/statistics/_/sort/usageRate" %>
+	<% doc = Nokogiri::HTML(open(url)) %>
+
+	
+	<% usageodd = [] %>
+	<% usageeven = [] %>
+	
+	<% doc.css(".oddrow").each do |a| %>
+	<% a.css("td").each do |b| %>
+	<% usageodd.push(b.text) %>
+	
+	<% end %>
+	<% end %>
+
+	<% doc.css(".evenrow").each do |a| %>
+	<% a.css("td").each do |b| %>
+	<% usageeven.push(b.text) %>
+	
+	<% end %>
+	<% end %>
+
+	<% usageodd = usageodd.each_slice(14).to_a %>
+
+	<% usageeven = usageeven.each_slice(14).to_a %>
+
+
+
+<div>
+	<table>
+
+		<thead>
+			<tr>
+			<th>Rank</th>
+			<th>Player</th>
+			<th>GP</th>
+			<th>MPG</th>
+			<th>TS%</th>
+			<th>AST</th>
+			<th>TO</th>
+			<th>USG</th>
+			<th>ORR</th>
+			<th>DRR</th>
+			<th>REBR</th>
+			<th>PER</th>
+			<th>VA</th>
+			<th>EWA</th>
+		</tr>
+			
+		</thead>
+		<tbody>
+<tr>
+	<% usageodd.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+	
+	
+</tr>
+	<% end %>
+<tr>
+	<% usageeven.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+
+
+	
+	
+</tr>
+	<% end %>
+
+	
+
+<!-- x -->
+	<!-- <div id="bio">
+	<%= doc.css(".bio").text %>
+	</div>
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
+</tbody>
+</table>
+</div>
+</body>
+</html>

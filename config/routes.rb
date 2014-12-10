@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
 
   root 'gamelogs#index'
-  resources :gamelogs
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+  get 'gamelogs/show' => 'gamelogs#show', as: :show
+
+  get 'gamelogs/playerlog' => 'gamelogs#playerlog', as: :playerlog
+
+  get 'gamelogs/playerusage' => 'gamelogs#playerusage', as: :playerusage
+
+  get 'gamelogs/pace' => 'gamelogs#pace', as: :pace
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
