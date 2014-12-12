@@ -33,11 +33,24 @@ td {
 	font-family: Verdana;
 }
 
+#photo{
+	width: 345px;
+	height: 230px;
+
+}
+
+#logo{
+	width: 70px;
+	height: 70px;
+}
+
+
+
 </style>
 
 <% require 'nokogiri' %>
 <% require 'open-uri' %>
-<% url = "http://sports.yahoo.com/nba/players/3118/gamelog/" %>
+<% url = "http://sports.yahoo.com/nba/players/4497/gamelog/" %>
 <% doc = Nokogiri::HTML(open(url)) %>
 <% stats = [] %>
 
@@ -54,20 +67,21 @@ td {
 <div id="avgstats">
 <%= doc.css(".stats li").text %>
 <div>
-<img src="http://l.yimg.com/j/assets/i/us/sp/v/nba/teams/83/70x70/lal.png">
-</div>
-<div>
-<img src="http://l2.yimg.com/bt/api/res/1.2/jBsds5goQSFEtpS12wBETQ--/YXBwaWQ9eW5ld3M7Zmk9ZmlsbDtoPTIzMDtxPTc1O3c9MzQ1/https://sp.yimg.com/j/assets/i/us/sp/v/nba_cutout/players_l/20141107/3118.png">
-</div>
-<div>
-<%= doc.css(".team-logo") %>
 
+<div id="logo" style="<%= doc.css(".team-logo @style") %>">
+
+
+		
 
 	</div>
-	<div>
-		<%= doc.css(".player-image img") %>
+	<div id="photo" style="<%= doc.css(".player-image img @style") %>">
+	
 		
 	</div>
+
+<%= link_to "Player Notes", show_path%>
+<%= link_to "Player Usage", playerusage_path %>
+<%= link_to "Team Pace", pace_path %>
 
 
 <div id ="playerstats">
@@ -106,19 +120,28 @@ td {
 
 
 <tbody>
-	<% stats[0].each do |i|%>
+	<% if stats[0] == nil %>
+	<%= "Player has not played this season." %>
+	<% else stats[0].each do |i|%>
+	<% if i != stats[0].last %>
 <tr>
 		<% i.each do |b|%>
+	
 			<td><%=b %></td>
+
 	
 	
 	<% end %>
+	
+	<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
+	
+	<td><%=fanduel.round(2)%></td>
 
-	<td><%= i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %></td>
-
+	<%end %>
 	
 </tr>
 <% end %>
+<%end%>
 
 </tbody>
 </table>

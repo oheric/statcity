@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<% require 'nokogiri' %>
+<% require 'open-uri' %>
+<% url = "http://sports.yahoo.com/nba/players?type=position&c=NBA&pos=PG" %>
+<% doc = Nokogiri::HTML(open(url)) %>
+
+<% playerlist = [] %>
+
+<% doc.css(".ysprow1").each do |a| %>
+<% playerlist.push(a.text.split("\n")) %>
+<%end%>
+
+	<div id ="playerlist">
+<table>
+<thead>
+	<tr>
+		<th></th>
+		<th>Name</th>
+		<th>Position</th>
+		<th>Team</th>
+		<th>Player ID</th>
+		
+	</tr>
+</thead>
+
+
+
+<tbody>
+	
+	<% playerlist.each do |i| %>
+<tr>
+	<% i.each do |b| %>
+	<td><%=b%></td>
+		<% end %>
+	
+<td>7888</td>
+</tr>
+<% end %>
+
+</tbody>
+</table>
+</div>
+
+</body>
+</html>

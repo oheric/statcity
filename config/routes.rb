@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'gamelogs/playerusage' => 'gamelogs#playerusage', as: :playerusage
 
   get 'gamelogs/pace' => 'gamelogs#pace', as: :pace
+
+  get 'gamelogs/playerlist' => 'gamelogs#playerlist', as: :playerlist
+
+  get 'gamelogs/load' 
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

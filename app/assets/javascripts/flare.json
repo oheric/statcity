@@ -1,0 +1,323 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "$9,000+",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "Kyle Lowry", "size": 3938},
+      {"name": "Chris Paul", "size": 3812},
+      {"name": "John Wall", "size": 6714},
+      {"name": "Russell Westbrook", "size": 743}
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$7,500-$8,900",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 2000},
+      {"name": "MaxFlowMinCut", "size": 600},
+      {"name": "ShortestPaths", "size": 800},
+      {"name": "SpanningTree", "size": 1000}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$6,000-$7,400",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 1800},
+      {"name": "CommunityStructure", "size": 900},
+      {"name": "HierarchicalCluster", "size": 3000},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$4,500-$5,900",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 1000},
+      {"name": "LinkDistance", "size": 800},
+      {"name": "MaxFlowMinCut", "size": 900},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 1800},
+      {"name": "CommunityStructure", "size": 1600},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$3,600-$4,400",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "CommunityStructure", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 800},
+      {"name": "HierarchicalCluster", "size": 700},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$3,500",
+   "children": [
+    {
+     "name": "Point Guard",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 700},
+      {"name": "CommunityStructure", "size": 800},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "MergeEdge", "size": 743},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 1000},
+      {"name": "HierarchicalCluster", "size": 1000}     
+     ]
+    },
+    {
+     "name": "Shooting Guard",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 600},
+      {"name": "CommunityStructure", "size": 700},
+      {"name": "HierarchicalCluster", "size": 600},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743},
+      {"name": "MergeEdge", "size": 743},
+      {"name": "MergeEdge", "size": 743},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  }
+
+
+ ]
+}
