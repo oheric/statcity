@@ -4,6 +4,8 @@ gem 'mongoid'
 
 gem 'nokogiri'
 
+gem 'mechanize'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use SCSS for stylesheets

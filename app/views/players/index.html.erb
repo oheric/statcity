@@ -1,0 +1,42 @@
+<h1>Name of Players</h1>
+	
+	<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Player ID</th>
+      <th>Cost</th>
+   
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.yahooid %></td>
+     
+   
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Name a New Player</h2>
+	<%= form_for @player do |f| %>
+
+	<div class="field">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div><br>
+
+	<div class="field">
+		<%= f.label :yahooid %><br>
+		<%= f.text_field :yahooid %>
+	</div><br>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<%end %>

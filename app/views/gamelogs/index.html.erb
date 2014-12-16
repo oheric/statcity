@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+
+<body>
+
 <meta charset="utf-8">
 <style>
 
@@ -37,9 +45,109 @@ button{
 }
 
 </style>
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+
+
 <h1>StatCity</h1>
+
+<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
+
+<script>
+$(function() {
+    $("tr:nth-child(2)").hide();
+    $("tr:nth-child(3)").hide();
+
+    $('#id_application_method').change(function() {
+    ($(this).val() == "1") ? 
+    $("tr:nth-child(2)").show() : $("tr:nth-child(2)").hide();
+
+    ($(this).val() == "2") ? 
+    $("tr:nth-child(3)").show() : $("tr:nth-child(3)").hide();
+    });});</script>
+
+<div>
+<table align = "center">
+  <tr>
+    <th>
+      <label for="id_application_method">Team</label>
+    </th>
+    <td>
+<select name="application_method" id="id_application_method">
+  <option value="">Pick First</option>
+
+  <% @teams.each_with_index do |t, index| %>
+  <option value = <%= "#{index}"%>><%=t.teamname%></option>
+  <%end%>
+
+ <!--  <option value="1">Los Angeles Lakers</option>
+  <option value="2">Los Angeles Clippers</option>
+  <option value="C">Chicago Bulls</option>
+  <option value="D">Utah Jazz</option> -->
+</select>
+    </td>
+  </tr>
+
+<tr>
+  <th>
+    <label for="id_1">Player</label>
+  </th>
+  <td>
+<select id="id_1">
+
+  <% @teams.each_with_index do |t, index| %>
+  <% t.players.each do |p, index| %>
+
+  
+  <option value=<%="#{index} + #{index} + 1 "%>><%=p.name%></option>
+  <!-- <option value="12">Nick Young</option>
+  <option value="13">Jeremy Lin</option>
+  <option value="14">Jordan Hill</option> -->
+  <%end%>
+  <%end%>
+</select>
+  </td>
+</tr>
+
+<tr>
+  <th>
+    <label for="id_2">Player</label>
+  </th>
+  <td>
+<select id="id_2">
+  <option value="21">Chris Paul</option>
+  <option value="22">Deandre Jordan</option>
+  <option value="23">Blake Griffin</option>
+  <option value="24">Jamal Crawford</option>
+</select>
+</td>
+</tr>
+</table>
+
+</div>
+
+<button>Submit</button>
+
+
+<% @teams.each do |t| %>
+<% t.players.each do |p| %>
+
+<div><%= link_to p.name, playerlog_path(playerid: p.yahooid) %>
+
+
+
+
+<!-- url_for("http://sports.yahoo.com/nba/players/" + p.yahooid.to_s + "/")  -->
+</div>
+<%end%>
+
+
+<% end %>
+
+<h1>player Search</h1>
+
+<%= collection_select(:player, :name, Player.all, :id, :name)%>
+
+<%= submit_tag "Search", :name => :playerid %>
+
 <script>
 
 var margin = 20,
@@ -118,63 +226,6 @@ d3.json("/gamelogs/load", function(error, root) {
 d3.select(self.frameElement).style("height", diameter + "px");
 
 </script>
-
-<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
-
-<script>$(function() {
-    $("tr:nth-child(2)").hide();
-    $("tr:nth-child(3)").hide();
-
-    $('#id_application_method').change(function() {
-    ($(this).val() == "A") ? 
-    $("tr:nth-child(2)").show() : $("tr:nth-child(2)").hide();
-
-    ($(this).val() == "B") ? 
-    $("tr:nth-child(3)").show() : $("tr:nth-child(3)").hide();
-    });});</script>
-
-<div>
-<table align = "center">
-	<tr><th><label for="id_application_method">Team</label></th><td>
-<select name="application_method" id="id_application_method"onchange="OnChangeTeam()">
-	<option value="">Pick First</option>
-	<option value="A">Los Angeles Lakers</option>
-	<option value="B">Los Angeles Clippers</option>
-	<option value="C">Chicago Bulls</option>
-	<option value="D">Utah Jazz</option>
-</select>
-</td>
-</tr>
-
-<tr><th><label for="id_A">Player</label></th><td>
-<select id="id_A">
-	<option value="A1">Kobe Bryant</option>
-	<option value="A2">Nick Young</option>
-	<option value="A3">Jeremy Lin</option>
-	<option value="A4">Jordan Hill</option>
-</select>
-</td>
-</tr>
-
-<tr><th><label for="id_B">Player</label></th><td>
-<select id="id_B">
-	<option value="B1">Chris Paul</option>
-	<option value="B2">Deandre Jordan</option>
-	<option value="B3">Blake Griffin</option>
-	<option value="B4">Jamal Crawford</option>
-</select>
-</td>
-</tr>
-</table>
-
-</div>
-
-<button >Submit</button>
-
-<div>
-<%= link_to "DeAndre Jordan", playerlog_path %>
-</div>
-
 
 
 </body>

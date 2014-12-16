@@ -1,9 +1,43 @@
 class GamelogsController < ApplicationController
 
 def index
+	@teams = Team.all
+	@players = Player.all
+	
+	@player = Player.new
+
 
 end
 
+def playerlog
+	require 'nokogiri' 
+	require 'open-uri'
+	@players = Player.all
+
+	
+
+	if params[:playerid]
+		search_query = URI.escape(params[:playerid])
+	# @players.each do |p| 
+	url = "http://sports.yahoo.com/nba/players/" + search_query.to_s + "/gamelog/"
+	
+	
+	doc = Nokogiri::HTML(open(url))
+	@playerstats = doc.css(".data-container")
+	@playerinfo = doc.css(".player-info")
+	@bio = doc.css(".bio")
+	@avgstat = doc.css(".stats li")
+	@logo = doc.css(".team-logo @style")
+	@photo = doc.css(".player-image img @style")
+	end
+end
+
+
+def playerusage
+end
+
+def pace
+end
 
 def show
 	require 'nokogiri'
@@ -20,29 +54,11 @@ def show
 	# @gamelogstats = @gamelogscraper.get_class_items('.data-container')
 end
 
-def playerlog
-	require 'nokogiri'
-	require 'open-uri'
 
-end
-
-def playerusage
-	require 'nokogiri'
-	require 'open-uri'
-end
-
-def pace
-	require 'nokogiri'
-	require 'open-uri'
-end
-
-def playerlist
-	require 'nokogiri'
-	require 'open-uri'
-end
 
 def load
 	@data = File.read("app/assets/javascripts/flare.json")
 	render :json => @data
 end
+
 end

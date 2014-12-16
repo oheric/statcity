@@ -1,0 +1,29 @@
+<h1><%=@team.teamname%></h1>
+
+<!--added in -->
+<%@team.players.each do |player| %>
+
+    <div><%=player.name %></div>
+    <div><%=player.yahooid %></div>
+<% end %>
+
+
+<!--Added in -->
+<h2>New Player</h2>
+
+<%= form_for(@player ,:url => {:action => :new_player, :controller => :teams} ) do |f| %>
+<%= hidden_field_tag :team_id, @team.id %>
+
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :yahooid %><br>
+      <%= f.text_area :yahooid %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

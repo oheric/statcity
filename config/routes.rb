@@ -13,6 +13,36 @@ Rails.application.routes.draw do
   get 'gamelogs/playerlist' => 'gamelogs#playerlist', as: :playerlist
 
   get 'gamelogs/load' 
+
+  get 'teams/' => 'teams#index', as: :teams
+
+  get 'teams/new' => 'teams#new', as: :teamsnew
+
+  post 'teams/' => 'teams#create', as: :teams_create
+
+  get 'teams/show' => 'teams#show', as: :showteam
+
+  post 'teams/new_player' => 'teams#new_player', as: :newplayer
+
+  delete 'teams/:id' => 'teams#destroy', as: :team
+
+  
+  get 'positions/' => 'positions#index', as: :positions
+
+  get 'positions/new' => 'positions#new', as: :positionsnew
+
+  post 'positions/' => 'positions#create', as: :positions_create
+
+  delete 'positions/:id' => 'positions#destroy', as: :position
+
+  
+  get 'players' => 'players#index', as: :players
+
+  get 'players/new' => 'players#new', as: :playersnew
+
+  post 'players/' => 'players#create', as: :players_create 
+
+  delete 'players/:id' => 'players#destroy', as: :player
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
