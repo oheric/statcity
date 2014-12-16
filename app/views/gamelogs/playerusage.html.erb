@@ -5,17 +5,7 @@
 </head>
 <body>
 
-	<style type="text/css">
 
-	table{
-		text-align: center;
-	}
-
-	td{
-		padding: 4px;
-	}
-		
-	</style>
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
@@ -47,11 +37,10 @@
 
 
 
-<div>
-	<table>
-
+<div class="table-responsive">
+	<table class="table table-bordered">
 		<thead>
-			<tr>
+			<tr class="playerstatshead">
 			<th>Rank</th>
 			<th>Player</th>
 			<th>GP</th>
@@ -69,7 +58,7 @@
 		</tr>
 			
 		</thead>
-		<tbody>
+		<tbody class="playerstatsbody">
 <tr>
 	<% usageodd.each do |i| %>
 	<% i.each do |b| %>

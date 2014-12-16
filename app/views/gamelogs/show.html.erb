@@ -5,30 +5,24 @@
 </head>
 <body>
 
-	<style type="text/css">
-		#playerheading{
-			font-size: 20px;
-			color: green;
-			font-family: Verdana;
-		}
-	</style>
-
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
 	
 	<% url = "http://fleaflicker.com/nba/news" %>
 	<% doc = Nokogiri::HTML(open(url)) %>
 
-
+<div class="table-responsive">
 	<% doc.css(".list-group-item").each do |lg| %>
 	<div id="playerheading"><%= lg.at_css(".list-group-item-heading").text %></div>
-	<div><%= lg.at_css(".list-group-item-text").text %></div>
+	<blockquote>
+	<div id="news"><%= lg.at_css(".list-group-item-text").text %></div>
+	</blockquote>
 	<%end%>
-
+</div
 	
 
 <!-- x -->
-	<!-- <div id="bio">
+<!-- 	<div id="bio">
 	<%= doc.css(".bio").text %>
 	</div>
 	<div id="avgstats">
