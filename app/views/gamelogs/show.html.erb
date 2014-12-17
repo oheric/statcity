@@ -11,14 +11,19 @@
 	<% url = "http://fleaflicker.com/nba/news" %>
 	<% doc = Nokogiri::HTML(open(url)) %>
 
-<div class="table-responsive">
+
 	<% doc.css(".list-group-item").each do |lg| %>
+	<div class = "animated bounceInLeft">
 	<div id="playerheading"><%= lg.at_css(".list-group-item-heading").text %></div>
+	</div>
 	<blockquote>
-	<div id="news"><%= lg.at_css(".list-group-item-text").text %></div>
+	<div id="news">
+		<div class = "animated bounceInRight">
+		<%= lg.at_css(".list-group-item-text").text %></div>
+	</div>
 	</blockquote>
 	<%end%>
-</div
+
 	
 
 <!-- x -->
