@@ -1,10 +1,10 @@
 require 'nokogiri'
 require 'open-uri'
 
-class GameLogScraper
+class GameLog
 	include Mongoid::Document
 
-	attr_reader :url, :data, :selector
+	attr_reader :url, :doc, :selector
 
 	def initialize(url)
 		@url = url

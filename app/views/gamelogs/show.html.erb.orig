@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<<<<<<< HEAD
+=======
+	<style type="text/css">
+		#playerheading{
+			font-size: 14px;
+			color: green;
+			font-family: Verdana;
+		}
+	</style>
+
+>>>>>>> b2214f266a713937a281c80939c103ce7e30c242
+	<% require 'nokogiri' %>
+	<% require 'open-uri' %>
+	<% require 'mechanize' %>
+	<% agent = Mechanize.new %>
+	<% agent.get("http://fleaflicker.com/nba/news") %>
+
+
+<<<<<<< HEAD
+	<% doc.css(".list-group-item").each do |lg| %>
+	<div class = "animated bounceInLeft">
+	<div id="playerheading"><%= lg.at_css(".list-group-item-heading").text %></div>
+	</div>
+	<blockquote>
+	<div id="news">
+		<div class = "animated bounceInRight">
+		<%= lg.at_css(".list-group-item-text").text %></div>
+	</div>
+	</blockquote>
+=======
+	<% pageno = 1 %>
+	<% while pageno < 10 %>
+	<% pageno += 1 %>
+	<% pagina = agent.page%>
+	<%notes = pagina.search(".list-group-item")%>
+	<%notes.each do |lg| %>
+	<div id ="playerheading"><%=lg.at(".list-group-item-heading").text %></div>
+	<div><%=lg.at(".list-group-item-text").text%></div><br>
+>>>>>>> b2214f266a713937a281c80939c103ce7e30c242
+	<%end%>
+
+	<% agent.page.link_with(:text => 'Next »').click %>
+	
+	<%end%>
+
+
+<<<<<<< HEAD
+<!-- x -->
+<!-- 	<div id="bio">
+	<%= doc.css(".bio").text %>
+	</div>
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
+=======
+
+
+	
+>>>>>>> b2214f266a713937a281c80939c103ce7e30c242
+</body>
+</html>

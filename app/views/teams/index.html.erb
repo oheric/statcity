@@ -1,0 +1,38 @@
+<h1>Names of Teams: </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.teamname %></td>
+      <td><%= link_to 'Show', showteam_path(:team => team.id)%></td>
+   
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+  <h2>Name a New Team</h2>
+
+  <%= form_for @team do |f| %>
+
+  <div class="field">
+    <%= f.label :teamname %><br>
+    <%= f.text_field :teamname %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+
+
+
