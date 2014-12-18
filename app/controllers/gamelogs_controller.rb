@@ -3,8 +3,8 @@ class GamelogsController < ApplicationController
 def index
 	@teams = Team.all
 	@players = Player.all
-	
 	@player = Player.new
+	@stats = JSON.parse(HTTParty.get("https://statcityapi.herokuapp.com/playerstats/show").body)
 
 
 end

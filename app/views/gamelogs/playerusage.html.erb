@@ -45,7 +45,7 @@
 
 	<% usageeven = usageeven.each_slice(14).to_a %>
 
-
+	
 
 <div>
 	<table>
@@ -70,28 +70,23 @@
 			
 		</thead>
 		<tbody>
-<tr>
-	<% usageodd.each do |i| %>
-	<% i.each do |b| %>
-	<td><%= b %></td>
-
+<% i = 0
+  while i < usageodd.length %>
+	<tr>
+	<% usageodd[i].each do |item| %>
+		<td><%= item %></td>
 	<% end %>
-	
-	
-</tr>
+	</tr>
+	<% if usageeven.length >= i %>
+		<tr>
+		<% usageeven[i].each do |item| %>
+			<td><%= item %></td>
+		<% end %>
+		</tr>
 	<% end %>
-<tr>
-	<% usageeven.each do |i| %>
-	<% i.each do |b| %>
-	<td><%= b %></td>
+	<% i += 1 %>
+<% end %>
 
-	<% end %>
-
-
-	
-	
-</tr>
-	<% end %>
 	
 
 	

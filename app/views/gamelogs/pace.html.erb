@@ -71,28 +71,22 @@
 		<tbody>
 
 
-<tr>
-	<% paceodd.each do |i| %>
-	<% i.each do |b| %>
-	<td><%= b %></td>
-
+<% i = 0
+  while i < paceodd.length %>
+	<tr>
+	<% paceodd[i].each do |item| %>
+		<td><%= item %></td>
 	<% end %>
-	
-	
-</tr>
+	</tr>
+	<% if paceeven.length >= i %>
+		<tr>
+		<% paceeven[i].each do |item| %>
+			<td><%= item %></td>
+		<% end %>
+		</tr>
 	<% end %>
-
-<tr>
-	<% paceeven.each do |i| %>
-	<% i.each do |b| %>
-	<td><%= b %></td>
-
-	<% end %>
-
-
-</tr>
-	<% end %>
-
+	<% i += 1 %>
+<% end %>
 	
 
 <!-- x -->

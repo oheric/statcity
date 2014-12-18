@@ -6,6 +6,8 @@ gem 'nokogiri'
 
 gem 'mechanize'
 
+gem 'httparty'
+
 
 
 gem 'bootstrap-sass', '~> 3.2.0'

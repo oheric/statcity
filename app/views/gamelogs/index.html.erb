@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 
-<<<<<<< HEAD
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-<meta name="description" content="">
-  <meta name="author" content="">
-
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
-  <link rel="stylesheet" src="../../assets/stylesheets/reset.css">
-  <link rel="stylesheet" src="app/assets/stylesheets/bootstrap.css">
-  <link rel="stylesheet" src="app/assets/stylesheets/style.css">
-
-  <script src="app/assets/javascripts/libs/modernizr-2.0.6.min.js"></script>
-
-<script src="https://d3js.org/d3.v3.min.js"></script>
-
-
+<head>
 </head>
-
+<script src="http://d3js.org/d3.v3.min.js"></script>
 <body>
 
 <style>
 
-
-
 h1{
 	color: black;
+  padding: 0px 0px 0px 20px;
 }
 
 button{
@@ -36,204 +18,191 @@ button{
 	margin-right: 300px;
 }
 
+#navbar{
+  float: right;
+  width: 60%;
+  height: 100%;
+}
+
+#d3{
+  clear: both;
+}
+
+text {
+  font: 2px;
+}
+
+#logo{
+
+  float: left;
+}
+
+
+#date{
+  height: 10px;
+  width: 160px;
+  font-size: 42px;
+  padding: 0px 0px 0px 20px;
+
+
+}
+
+#description{
+  
+  padding: 00px 0px 0px 20px;
+  float: left;
+  clear: both;
+  font-family: Helvetica;
+
+}
+
 </style>
 
 
-<% @teams.each do |t| %>
-<% t.players.each do |p| %>
 
-<div><%= link_to p.name, playerlog_path(playerid: p.yahooid) %>
+  <img id="logo" src="../assets/skylinesmall1.png">
 
-<!-- url_for("http://sports.yahoo.com/nba/players/" + p.yahooid.to_s + "/")  -->
-</div>
-<%end%>
 
-<% end %>
+<div id="navbar">
 
-<h1>Player Search</h1>
-
-<%= form_tag playerlog_path, :method => 'get' do %>
-    <%= text_field_tag :playerid %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-
-<!-- D3 starts here -->
-
-  <div id="container" class="container">
-    <header>
-    <h1>Gates Foundation Educational Spending</h1>
-    </header>
-    <div id="main" role="main">
-      <div id="view_selection" class="btn-group">
-        <a href="#" id="all" class="btn active">All Grants</a>
-        <a href="#" id="year" class="btn">Grants By Year</a>
-      </div>
-      <div id="vis"></div>
+<!-- navbar starts here -->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"></a>
     </div>
-    <footer>
-    <p>A demonstration of animated bubble charts in D3.js</p>
-    <p><a href="http://vallandingham.me/bubble_charts_in_d3.html">Blog Post</a> | <a href="https://github.com/vlandham/gates_bubbles">Code</a> | <a href="http://www.washingtonpost.com/wp-srv/metro/data/gates-grants.html">Data</a></p>
-    </footer>
-  </div> <!--! end of #container -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><%=link_to "Home", root_path%><span class="sr-only">(current)</span></a></li>
 
 
+     
 
-  <script>window.jQuery || document.write('<script src=app/assets/javascripts/libs/jquery-1.11.1.min.js"><\/script>')</script>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Players <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% @teams.each do |t| %>
+            <% t.players.each do |p| %>
+            <li><%=t.teamname%><%=link_to p.name, playerlog_path(playerid: p.yahooid)%></a></li>
+            <%end%>
+            <%end %>
+            <li class="divider"></li>
+            <li><%=link_to "Player Notes", show_path%></a></li>
+            <li class="divider"></li>
+            <li><%=link_to "Player Usage", playerusage_path%></a></li>
+            <li class="divider"></li>
+            <li><%=link_to "Team Pace", pace_path%></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  </div>
+</div>
 
-  <script defer src="app/javascripts/plugins.js"></script>
-  <script defer src="app/javascripts/script.js"></script>
-  <script src="app/assets/javascripts/CustomTooltip.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script src="app/assets/javascripts/vis.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-        $(document).ready(function() {
-          $('#view_selection a').click(function() {
-            var view_type = $(this).attr('id');
-            $('#view_selection a').removeClass('active');
-            $(this).toggleClass('active');
-            toggle_view(view_type);
-            return false;
-          });
-=======
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<h1>StatCity</h1>
+
+<!-- navbar ends here -->
+
+<!-- date and time starts here-->
+
+<div id="description"><em>NBA FanDuel Averages For:<em></div>
+
+<div id="date">
+<%time = Time.new %>
+<%= time.month%>/<%=time.day%>
+
+</div>
+
+
+<div id="d3">
 <script>
 
-var margin = 20,
-    diameter = 960;
+var diameter = 960,
+    format = d3.format(",d"),
+    color = d3.scale.category20c();
 
-var color = d3.scale.linear()
-    .domain([-7, 4])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-    .interpolate(d3.interpolateHcl);
-
-var pack = d3.layout.pack()
-    .padding(2)
-    .size([diameter - margin, diameter - margin])
-    .value(function(d) { return d.size; })
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5);
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter)
     .attr("height", diameter)
-  .append("g")
-    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+    .attr("class", "bubble");
 
 d3.json("/gamelogs/load", function(error, root) {
-  if (error) return console.error(error);
+  var node = svg.selectAll(".node")
+      .data(bubble.nodes(classes(root))
+      .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-  var focus = root,
-      nodes = pack.nodes(root),
-      view;
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
 
-  var circle = svg.selectAll("circle")
-      .data(nodes)
-    .enter().append("circle")
-      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { return d.children ? color(d.depth) : null; })
-      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return color(d.packageName); });
 
-  var text = svg.selectAll("text")
-      .data(nodes)
-    .enter().append("text")
-      .attr("class", "label")
-      .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
-      .style("display", function(d) { return d.parent === root ? null : "none"; })
-      .text(function(d) { return d.name; });
-
-  var node = svg.selectAll("circle,text");
-
-  d3.select("body")
-      .style("background", color(-10))
-      .on("click", function() { zoom(root); });
-
-  zoomTo([root.x, root.y, root.r * 2 + margin]);
-
-  function zoom(d) {
-    var focus0 = focus; focus = d;
-
-    var transition = d3.transition()
-        .duration(d3.event.altKey ? 7500 : 750)
-        .tween("zoom", function(d) {
-          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
-          return function(t) { zoomTo(i(t)); };
->>>>>>> feec5bf8f38b112db688c5bfca63494cbfeb9a66
-        });
-
-    transition.selectAll("text")
-      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
-        .each("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-        .each("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
-  }
-
-  function zoomTo(v) {
-    var k = diameter / v[2]; view = v;
-    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
-    circle.attr("r", function(d) { return d.r * k; });
-  }
+  node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
 });
+
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
+
+  function recurse(name, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+    else classes.push({packageName: name, className: node.name, value: node.size});
+  }
+
+  recurse(null, root);
+  return {children: classes};
+}
 
 d3.select(self.frameElement).style("height", diameter + "px");
 
 </script>
 
-<script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script> 
-
-<script>$(function() {
-    $("tr:nth-child(2)").hide();
-    $("tr:nth-child(3)").hide();
-
-    $('#id_application_method').change(function() {
-    ($(this).val() == "A") ? 
-    $("tr:nth-child(2)").show() : $("tr:nth-child(2)").hide();
-
-    ($(this).val() == "B") ? 
-    $("tr:nth-child(3)").show() : $("tr:nth-child(3)").hide();
-    });});</script>
-
-<div>
-<table align = "center">
-	<tr><th><label for="id_application_method">Team</label></th><td>
-<select name="application_method" id="id_application_method"onchange="OnChangeTeam()">
-	<option value="">Pick First</option>
-	<option value="A">Los Angeles Lakers</option>
-	<option value="B">Los Angeles Clippers</option>
-	<option value="C">Chicago Bulls</option>
-	<option value="D">Utah Jazz</option>
-</select>
-</td>
-</tr>
-
-<tr><th><label for="id_A">Player</label></th><td>
-<select id="id_A">
-	<option value="A1">Kobe Bryant</option>
-	<option value="A2">Nick Young</option>
-	<option value="A3">Jeremy Lin</option>
-	<option value="A4">Jordan Hill</option>
-</select>
-</td>
-</tr>
-
-<tr><th><label for="id_B">Player</label></th><td>
-<select id="id_B">
-	<option value="B1">Chris Paul</option>
-	<option value="B2">Deandre Jordan</option>
-	<option value="B3">Blake Griffin</option>
-	<option value="B4">Jamal Crawford</option>
-</select>
-</td>
-</tr>
-</table>
-
 </div>
 
-<button >Submit</button>
 
-<div>
-<%= link_to "DeAndre Jordan", playerlog_path %>
+
+
+<!-- url_for("http://sports.yahoo.com/nba/players/" + p.yahooid.to_s + "/")  -->
 </div>
+
+
+<% if @stats %>
+<% @stats.each do |s|%>
+<%= s['firstname']%> <%=s['lastname']%>
+
+<% playerstats = s['ppg'].to_f + (s['reb'].to_f * 1.2) + (s['ast'].to_i * 1.5) %>
+<%= playerstats.round(2) %>
+
+<%end%>
+<%end%>
+
+
+
+
+
 
 
 
