@@ -5,17 +5,7 @@
 </head>
 <body>
 
-	<style type="text/css">
 
-	table{
-		text-align: center;
-	}
-
-	td{
-		padding: 4px;
-	}
-		
-	</style>
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
@@ -46,12 +36,12 @@
 	<% usageeven = usageeven.each_slice(14).to_a %>
 
 
-
-<div>
-	<table>
-
+<div class = "animated fadeInUp">
+<div class="table-responsive">
+	<table class="table table-bordered">
 		<thead>
-			<tr>
+			
+			<tr class="playerstatshead">
 			<th>Rank</th>
 			<th>Player</th>
 			<th>GP</th>
@@ -67,9 +57,10 @@
 			<th>VA</th>
 			<th>EWA</th>
 		</tr>
+		
 			
 		</thead>
-		<tbody>
+		<tbody class="playerstatsbody">
 <tr>
 	<% usageodd.each do |i| %>
 	<% i.each do |b| %>
@@ -86,26 +77,13 @@
 	<td><%= b %></td>
 
 	<% end %>
-
-
-	
 	
 </tr>
 	<% end %>
 	
-
-	
-
-<!-- x -->
-	<!-- <div id="bio">
-	<%= doc.css(".bio").text %>
-	</div>
-	<div id="avgstats">
-	<%= doc.css(".stats li").text %>
-	</div> 
- -->
 </tbody>
 </table>
+</div>
 </div>
 </body>
 </html>

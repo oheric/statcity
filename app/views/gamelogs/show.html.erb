@@ -5,38 +5,34 @@
 </head>
 <body>
 
-	<style type="text/css">
-		#playerheading{
-			font-size: 14px;
-			color: green;
-			font-family: Verdana;
-		}
-	</style>
-
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
-	<% require 'mechanize' %>
-	<% agent = Mechanize.new %>
-	<% agent.get("http://fleaflicker.com/nba/news") %>
+	
+	<% url = "http://fleaflicker.com/nba/news" %>
+	<% doc = Nokogiri::HTML(open(url)) %>
 
 
-	<% pageno = 1 %>
-	<% while pageno < 10 %>
-	<% pageno += 1 %>
-	<% pagina = agent.page%>
-	<%notes = pagina.search(".list-group-item")%>
-	<%notes.each do |lg| %>
-	<div id ="playerheading"><%=lg.at(".list-group-item-heading").text %></div>
-	<div><%=lg.at(".list-group-item-text").text%></div><br>
+	<% doc.css(".list-group-item").each do |lg| %>
+	<div class = "animated bounceInLeft">
+	<div id="playerheading"><%= lg.at_css(".list-group-item-heading").text %></div>
+	</div>
+	<blockquote>
+	<div id="news">
+		<div class = "animated bounceInRight">
+		<%= lg.at_css(".list-group-item-text").text %></div>
+	</div>
+	</blockquote>
 	<%end%>
 
-	<% agent.page.link_with(:text => 'Next »').click %>
 	
-	<%end%>
 
-
-
-
-	
+<!-- x -->
+<!-- 	<div id="bio">
+	<%= doc.css(".bio").text %>
+	</div>
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
 </body>
 </html>
