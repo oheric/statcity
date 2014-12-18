@@ -7,9 +7,6 @@
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
-	<% require 'mechanize' %>
-	<% agent = Mechanize.new %>
-	<% agent.get("http://fleaflicker.com/nba/news") %>
 	
 	<% url = "http://fleaflicker.com/nba/news" %>
 	<% doc = Nokogiri::HTML(open(url)) %>
@@ -27,9 +24,7 @@
 	</blockquote>
 	<%end%>
 
-	<% agent.page.link_with(:text => 'Next »').click %>
 	
-	<%end%>
 
 <!-- x -->
 <!-- 	<div id="bio">

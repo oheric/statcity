@@ -91,12 +91,6 @@
 					
 							<td><%=b %></td>
 
-<%if @playerstats != nil %>
-<% @playerstats.each do |dc| %>
-<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
-
-<%end%>
-<%end %>
 					
 					
 					<% end %>
@@ -105,21 +99,6 @@
 					
 					<td><%=fanduel.round(2)%></td>
 
-<div id="playerinfo">
-	<% if @playerinfo != nil %>
-<%= @playerinfo.text%>
-</div>
-<%end %>
-<div id="bio">
-	<% if @bio != nil %>
-<%= @bio.text %>
-</div>
-<%end %>
-<div id="avgstats">
-	<% if @avgstat != nil %>
-<%= @avgstat.text %>
-<div>
-	<%end %>
 					<%end %>
 					
 				</tr>
@@ -196,7 +175,6 @@ d3.tsv("/assets/data.tsv", function(error, data) {
  });
 
 </script>
->>>>>>> b9392ea227ed02c2b7d8f2f538ebc971fd2410c6
 	
 	
 
