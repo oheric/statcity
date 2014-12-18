@@ -4,12 +4,15 @@ gem 'mongoid'
 
 gem 'nokogiri'
 
+<<<<<<< HEAD
+=======
 gem 'mechanize'
 
 gem 'httparty'
 
 
 
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 gem 'bootstrap-sass', '~> 3.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

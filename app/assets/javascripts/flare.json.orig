@@ -16,6 +16,39 @@
         "size": "4682"
     },
     {
+<<<<<<< HEAD
+     "name": "Small Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Power Forward",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "Center",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+  "name": "$7,500-$8,900",
+   "children": [
+=======
         "name": " Blake Griffin",
         "size": "3771"
     },
@@ -27,6 +60,7 @@
         "name": " Rudy Gay",
         "size": "3596"
     },
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
     {
         "name": " Monta Ellis",
         "size": "3150"
@@ -870,4 +904,9 @@
 ]
   }
  ]
+<<<<<<< HEAD
+}
+
+=======
 }]}
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7

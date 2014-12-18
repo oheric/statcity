@@ -47,11 +47,11 @@
 	<% paceeven = paceeven.each_slice(12).to_a %>
 
 
+<div class = "animated fadeInDown">
+<div class="table-responsive">
+	<table class="table table-bordered">
 
-<div>
-	<table>
-
-		<thead>
+		<thead class="playerstatshead">
 			<tr>
 			<th>Rank</th>
 			<th>Team</th>
@@ -68,6 +68,30 @@
 		</tr>
 			
 		</thead>
+<<<<<<< HEAD
+		<tbody class="playerstatsbody">
+<tr>
+	<% paceodd.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+	
+	
+</tr>
+	<% end %>
+<tr>
+	<% paceeven.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+
+
+	
+	
+</tr>
+=======
 		<tbody>
 
 
@@ -84,6 +108,7 @@
 			<td><%= item %></td>
 		<% end %>
 		</tr>
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 	<% end %>
 	<% i += 1 %>
 <% end %>

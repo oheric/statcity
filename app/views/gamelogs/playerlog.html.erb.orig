@@ -8,6 +8,16 @@
 
 
 
+		<% require 'nokogiri' %>
+		<% require 'open-uri' %>
+		<% url = "http://sports.yahoo.com/nba/players/" + "3118" + "/gamelog/" %>
+		<% doc = Nokogiri::HTML(open(url)) %>
+		<% stats = [] %>
+		<div id="data-container">
+		<% doc.css(".data-container").each do |dc| %>
+		</div>
+		<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
+		<%end%>
 
 
 	<div class = "animated fadeInDownBig">
@@ -35,8 +45,155 @@
 			<%= link_to "Team Pace", pace_path, {class: "NUP"} %>
 		</div>
 
+<div class = "animated pulse">
+		<div  id ="playerstats" class="table-responsive">
+			
+				<table class="table table-bordered">
+				<thead>
+					<tr class="playerstatshead">
+						<th>Date</th>
+						<th></th>
+					
+						<th>Opp.</th>
+						<th>Result</th>
+						<th>Score</th>
+						<th>Min</th>
+						<th>FGM</th>
+						<th>FGA</th>
+						<th>FG%</th>
+						<th>3PM</th>
+						<th>3PA</th>
+						<th>3PT%</th>
+						<th>FTM</th>
+						<th>FTA</th>
+						<th>FT%</th>
+						<th>Off. Reb</th>
+						<th>Def. Reb</th>
+						<th>Reb</th>
+						<th>Ast</th>
+						<th>TO</th>
+						<th>Stl</th>
+						<th>Blk</th>
+						<th>PF</th>
+						<th>Pts</th>
+						<th>FanDuel Points</th>
+					</tr>
+				</thead>
+
+			
+			<tbody class="playerstatsbody">
+				<% if stats[0] == nil %>
+				<%= "Player has not played this season." %>
+				<% else stats[0].each do |i|%>
+				<% if i != stats[0].last %>
+				<tr>
+						<% i.each do |b|%>
+					
+							<td><%=b %></td>
+
+					
+					
+					<% end %>
+					
+					<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
+					
+					<td><%=fanduel.round(2)%></td>
+
+					<%end %>
+					
+				</tr>
+				<% end %>
+				<%end%>
+
+					</tbody>
+					</div>
+				</table>
+			</div>
+		
+
+<<<<<<< HEAD
+=======
+</head>
+<body>
+
+<style type ="text/css">
+table, th, td{
+	border: 1px solid black
+}
+td {
+	padding: 8px;
+}
+
+#playerstats{
+	
+	color: black;
+	clear: both;
+	padding-left: 20px
+}
+
+#playerinfo{
+	font-size: 24px;
+	color: red;
+	padding-left: 20px
+}
+
+#bio{
+	font-family: Verdana;
+	padding-left: 20px
+}
+
+#avgstats{
+	font-size: 10px;
+	color: blue;
+	font-family: Verdana;
+	padding-left: 20px
+}
+
+#photo{
+	width: 345px;
+	height: 230px;
+	padding-left: 20px
+
+}
+
+#logo{
+	width: 70px;
+	height: 70px;
+	padding-left: 20px
+}
+
+#nostats{
+	font-size: 20px;
+	color: red
+}
+
+.backdiv{
+	font-size: 20px;
+	
+}
+
+#playernotes{
+	font-size: 20px;
+	height: 10px;
+	width: 140px;
+	float: left;
+
+}
+
+#playerusage{
+	font-size: 20px;
+	float: left;
+	width: 145px;
+}
+
+#pace{
+	font-size: 20px;
+	float:left;
+}
 
 
+
+</style>
 
 <% stats = [] %>
 
@@ -138,6 +295,7 @@
 <div class="backdiv"><%= link_to "Back", root_path %></div>
 
 
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 <script src="http://d3js.org/d3.v3.js"></script>
 <script>
 
@@ -193,7 +351,7 @@ d3.tsv("/assets/data.tsv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Price ($)");
+      .text("Points");
 
   svg.append("path")
       .datum(data)
@@ -202,7 +360,10 @@ d3.tsv("/assets/data.tsv", function(error, data) {
  });
 
 </script>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 	
 	
 
