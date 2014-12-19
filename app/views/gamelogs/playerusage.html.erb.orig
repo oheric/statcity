@@ -7,6 +7,7 @@
 
 
 
+<!-- scraping data from nokogir, pushing to arrays, and slicing them to arrays within an array -->
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
 	
@@ -60,7 +61,13 @@
 		</tr>
 			
 		</thead>
+<<<<<<< HEAD
+		<tbody>
+
+<!-- loop to alternate putting in value of usageodd then usageeven -->
+=======
 		<tbody class="playerstatsbody">
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 <% i = 0
   while i < usageodd.length %>
 	<tr>
@@ -79,6 +86,20 @@
 <% end %>
 
 	
+<<<<<<< HEAD
+
+	
+
+<!-- x
+	<!-- <div id="bio">
+	<%= doc.css(".bio").text %>
+	</div>
+	<div id="avgstats">
+	<%= doc.css(".stats li").text %>
+	</div> 
+ -->
+=======
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 </tbody>
 </table>
 </div>

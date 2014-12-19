@@ -6,6 +6,11 @@
 <body>
 
 
+<<<<<<< HEAD
+</style>
+<!-- pulling string from nokogiri, adding to an array, splitting and slicing to arrays of 24 -->
+=======
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 
 	<% stats = [] %>
 
@@ -79,8 +84,13 @@
 </thead>
 
 
+<<<<<<< HEAD
+<!-- organizing the data into a table -->
+<tbody>
+=======
 
 <tbody class="playerstatsbody">
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 	<% if stats[0] == nil %>
 	<div id ="nostats"><%= "Player has not played this season." %></div><br>
 	<% else stats[0].each do |i|%>
