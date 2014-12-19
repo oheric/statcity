@@ -124,9 +124,10 @@ table, th, td{
 
 #avgstats{
   font-size: 20px;
-  color: white;
+  color: #1F64BF;
   font-family: 'Fjalla One';
   text-align: center;
+  text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #photo{
@@ -152,12 +153,22 @@ table, th, td{
       text-decoration: underline;
     }
 
+#playerheadingnews{
+      font-size: 17px;
+      color: #1F64BF;
+      font-family: 'Fjalla One';
+      
+      text-decoration: underline;
+    }
+
+
+
 #news {
       font-size: 18px;
       color: black;
       font-family: 'Fjalla One';
       text-decoration: underline;
-
+   
 
       
 }

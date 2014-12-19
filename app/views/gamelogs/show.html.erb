@@ -21,12 +21,14 @@
 	<%notes.each do |lg| %>
 
 	<div class = "animated bounceInLeft">
-	<div id ="playerheading"><%=lg.at(".list-group-item-heading").text %></div>
+	<div id ="playerheadingnews"><%=lg.at(".list-group-item-heading").text %></div>
 	</div>
+	<blockquote>
 	<div id="news">
 	<div class = "animated bounceInRight">
 	<div><%=lg.at(".list-group-item-text").text%></div>
 </div>
+</blockquote> 
 </div>
 <br>
 	<%end%>
