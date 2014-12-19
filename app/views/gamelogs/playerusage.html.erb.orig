@@ -35,11 +35,18 @@
 
 	<% usageeven = usageeven.each_slice(14).to_a %>
 
+<<<<<<< HEAD
+
+<div class = "animated fadeInUp">
+<div class="table-responsive">
+	<table class="table table-bordered">
+=======
 	
 
 <div>
 	<table>
 
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 		<thead>
 			
 			<tr class="playerstatshead">
@@ -61,12 +68,25 @@
 		
 			
 		</thead>
+<<<<<<< HEAD
+		<tbody class="playerstatsbody">
+<tr>
+	<% usageodd.each do |i| %>
+	<% i.each do |b| %>
+	<td><%= b %></td>
+
+	<% end %>
+	
+	
+</tr>
+=======
 		<tbody>
 <% i = 0
   while i < usageodd.length %>
 	<tr>
 	<% usageodd[i].each do |item| %>
 		<td><%= item %></td>
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 	<% end %>
 	</tr>
 	<% if usageeven.length >= i %>
@@ -76,21 +96,16 @@
 		<% end %>
 		</tr>
 	<% end %>
+<<<<<<< HEAD
+	
+</tr>
+	<% end %>
+=======
 	<% i += 1 %>
 <% end %>
 
+>>>>>>> 3bc17f206b8bc260749b9408bc8c22efcd89d6d7
 	
-
-	
-
-<!-- x -->
-	<!-- <div id="bio">
-	<%= doc.css(".bio").text %>
-	</div>
-	<div id="avgstats">
-	<%= doc.css(".stats li").text %>
-	</div> 
- -->
 </tbody>
 </table>
 </div>
