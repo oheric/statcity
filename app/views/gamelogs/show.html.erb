@@ -5,13 +5,6 @@
 </head>
 <body>
 
-	<style type="text/css">
-		#playerheading{
-			font-size: 14px;
-			color: green;
-			font-family: Verdana;
-		}
-	</style>
 
 <!-- using the mechanize gem to scrape a page, click the next button to get data from the next page up to page 9, and displaying the heading and text -->
 
@@ -28,8 +21,18 @@
 	<% pagina = agent.page%>
 	<%notes = pagina.search(".list-group-item")%>
 	<%notes.each do |lg| %>
-	<div id ="playerheading"><%=lg.at(".list-group-item-heading").text %></div>
-	<div><%=lg.at(".list-group-item-text").text%></div><br>
+
+	<div class = "animated bounceInLeft">
+	<div id ="playerheadingnews"><%=lg.at(".list-group-item-heading").text %></div>
+	</div>
+	<blockquote>
+	<div id="news">
+	<div class = "animated bounceInRight">
+	<div><%=lg.at(".list-group-item-text").text%></div>
+</div>
+</blockquote> 
+</div>
+<br>
 	<%end%>
 
 	<% agent.page.link_with(:text => 'Next »').click %>

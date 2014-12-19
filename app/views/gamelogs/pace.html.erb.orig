@@ -5,6 +5,22 @@
 </head>
 <body>
 
+<<<<<<< HEAD
+	<style type="text/css">
+
+	table{
+		text-align: center;
+	}
+
+	td{
+		padding: 4px;
+	}
+		
+		
+	</style>
+<!-- scraping from nokogiri, adding the result to an array, slicing to create arrays within an array -->
+=======
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>

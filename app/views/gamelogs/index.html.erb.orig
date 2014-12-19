@@ -6,7 +6,66 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <body>
 
+<<<<<<< HEAD
+<style>
+
+h1{
+	color: black;
+  padding: 0px 0px 0px 20px;
+}
+
+button{
+	float: right;
+	margin-right: 300px;
+}
+
+#navbar{
+  float: left;
+  width: 146px;
+  height: 100%;
+  clear: both;
+}
+
+#d3{
+  float: left;
+}
+
+text {
+  font: 2px;
+}
+
+#logo{
+
+  float: left;
+}
+
+
+#date{
+  height: 10px;
+  width: 160px;
+  font-size: 42px;
+  padding: 0px 0px 0px 20px;
+}
+
+#description{
+  font-family: Helvetica;
+}
+
+#together{
+  float:right;
+  padding: 0 80px 0 0;
+}
+
+#logodiv{
+  width: 100%;
+  height: 100px;
+}
+
+</style>
+
+=======
 <div class="animated flip">
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 <div id="logodiv">
 <!-- logo image -->
 <img id="logo" src="../assets/skylinesmall1.png">
@@ -155,7 +214,20 @@ d3.select(self.frameElement).style("height", diameter + "px");
 <!-- multiply average fanduel points by 240 to get approximate cost of player on fanduel. planning on using this organize players on navbar -->
 <% (playerstats * 240).round(2) %>
 <%end%>
+
 <%end%>
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+>>>>>>> 64ba5fe7fbf31e2bf66f5460955454dac532696e
 </body>
 </html>
 
