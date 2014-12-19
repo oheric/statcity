@@ -59,8 +59,8 @@ text {
 </style>
 
 
-
-  <img id="logo" src="../assets/skylinesmall1.png">
+<!-- logo image -->
+<img id="logo" src="../assets/skylinesmall1.png">
 
 
 <div id="navbar">
@@ -82,28 +82,27 @@ text {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%=link_to "Home", root_path%><span class="sr-only">(current)</span></a></li>
-
-
-     
-
-        
+        <li class="active"><%=link_to "Home", root_path%><span class="sr-only">(current)</span></a></li>        
+          
+        <% @teams.each do |t| %>
+      
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Players <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%=t.teamname%><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <% @teams.each do |t| %>
-            <% t.players.each do |p| %>
-            <li><%=t.teamname%><%=link_to p.name, playerlog_path(playerid: p.yahooid)%></a></li>
+           <% t.players.each do |p| %>
+            <li><%=link_to p.name, playerlog_path(playerid: p.yahooid)%></a></li>
             <%end%>
-            <%end %>
-            <li class="divider"></li>
-            <li><%=link_to "Player Notes", show_path%></a></li>
-            <li class="divider"></li>
-            <li><%=link_to "Player Usage", playerusage_path%></a></li>
-            <li class="divider"></li>
-            <li><%=link_to "Team Pace", pace_path%></a></li>
+            
+            
           </ul>
         </li>
+        <%end %>
+
+        <li><%=link_to "Player Notes", show_path%></li>
+        <li class="divider"></li>
+        <li><%=link_to "Player Usage", playerusage_path%></li>
+        <li class="divider"></li>
+        <li><%=link_to "Team Pace", pace_path%></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -124,7 +123,7 @@ text {
 
 </div>
 
-
+<!-- d3 graph starts here -->
 <div id="d3">
 <script>
 
@@ -188,13 +187,14 @@ d3.select(self.frameElement).style("height", diameter + "px");
 <!-- url_for("http://sports.yahoo.com/nba/players/" + p.yahooid.to_s + "/")  -->
 </div>
 
+<!-- pulling from the api -->
 
 <% if @stats %>
 <% @stats.each do |s|%>
-<%= s['firstname']%> <%=s['lastname']%>
+<% s['firstname']%> <%s['lastname']%>
 
 <% playerstats = s['ppg'].to_f + (s['reb'].to_f * 1.2) + (s['ast'].to_i * 1.5) + (s['blk'].to_f * 2) + (s['stl'].to_f * 2) - (s['to'].to_f) %>
-<%= playerstats.round(2) %>
+<% playerstats.round(2) %>
 
 <%end%>
 <%end%>
