@@ -11,7 +11,7 @@ class TeamsController < ApplicationController
 		@team = Team.find(params[:team])
 		@player = Player.new
 	end
-
+# rendering to json
 	def new
 		@teams = Team.all
 		render json: @teams, status: 200

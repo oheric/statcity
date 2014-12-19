@@ -1,3 +1,5 @@
+# changed the teamnames to prices instead
+
 class Team 
 	include Mongoid::Document
 

@@ -20,7 +20,7 @@ button{
 
 #navbar{
   float: left;
-  width: 140px;
+  width: 146px;
   height: 100%;
   clear: both;
 }
@@ -201,18 +201,10 @@ d3.select(self.frameElement).style("height", diameter + "px");
 <% playerstats = s['ppg'].to_f + (s['reb'].to_f * 1.2) + (s['ast'].to_i * 1.5) + (s['blk'].to_f * 2) + (s['stl'].to_f * 2) - (s['to'].to_f) %>
 <% playerstats.round(2) %>
 
+<!-- multiply average fanduel points by 240 to get approximate cost of player on fanduel. planning on using this organize players on navbar -->
+<% (playerstats * 240).round(2) %>
 <%end%>
 <%end%>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
 

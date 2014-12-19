@@ -21,7 +21,7 @@ def playerlog
 	# @players.each do |p| 
 	url = "http://sports.yahoo.com/nba/players/" + search_query.to_s + "/gamelog/"
 	
-	
+# nokogiri information	
 	doc = Nokogiri::HTML(open(url))
 	@playerstats = doc.css(".data-container")
 	@playerinfo = doc.css(".player-info")
@@ -55,7 +55,7 @@ def show
 end
 
 
-
+# reading fro flare.json
 def load
 	@data = File.read("app/assets/javascripts/flare.json")
 	render :json => @data

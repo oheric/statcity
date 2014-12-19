@@ -6,6 +6,7 @@ class PositionsController < ApplicationController
 		
 	end
 
+# rendering to json
 	def new
 		@positions = Position.all
 		render json: @positions, status: 200

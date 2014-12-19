@@ -83,6 +83,7 @@ td {
 
 
 </style>
+<!-- pulling string from nokogiri, adding to an array, splitting and slicing to arrays of 24 -->
 
 <% stats = [] %>
 
@@ -152,7 +153,7 @@ td {
 </thead>
 
 
-
+<!-- organizing the data into a table -->
 <tbody>
 	<% if stats[0] == nil %>
 	<div id ="nostats"><%= "Player has not played this season." %></div><br>
@@ -165,6 +166,7 @@ td {
 
 	<% end %>
 	
+	<!-- equation to convert values to fanduel points -->
 	<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
 	
 	<td><%=fanduel.round(2)%></td>

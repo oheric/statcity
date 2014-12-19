@@ -17,6 +17,7 @@
 		
 	</style>
 
+<!-- scraping data from nokogir, pushing to arrays, and slicing them to arrays within an array -->
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
 	
@@ -70,6 +71,8 @@
 			
 		</thead>
 		<tbody>
+
+<!-- loop to alternate putting in value of usageodd then usageeven -->
 <% i = 0
   while i < usageodd.length %>
 	<tr>
@@ -91,7 +94,7 @@
 
 	
 
-<!-- x -->
+<!-- x
 	<!-- <div id="bio">
 	<%= doc.css(".bio").text %>
 	</div>
