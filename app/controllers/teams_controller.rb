@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-	before_action :set_team, only: [:destroy]
+	before_action :set_team, only: [:edit, :update, :destroy]
 	def index
 		@teams = Team.all
 		@team = Team.new
@@ -22,6 +22,19 @@ class TeamsController < ApplicationController
 		@team.save
 		redirect_to teams_path
 		
+end
+
+def edit
+	
+end
+
+def update
+	
+	if @team.update_attributes(params.require(:team).permit(:teamname))
+		redirect_to teams_path
+	else 
+		render 'edit'
+	end
 end
 
 def new_player

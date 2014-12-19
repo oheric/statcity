@@ -1,0 +1,11 @@
+<h1>Edit this team</h1>
+
+<%= form_for @team do |f| %>
+	Name: <%= f.text_field :teamname %>
+	
+
+<%= f.submit "Edit team" %>
+
+<% end %>
+
+<%= link_to "Back to the list", teams_path %>

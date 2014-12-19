@@ -24,6 +24,10 @@ Rails.application.routes.draw do
 
   post 'teams/new_player' => 'teams#new_player', as: :newplayer
 
+  get 'teams/:id/edit' => 'teams#edit', as: :editteam
+
+  patch 'teams/:id' => 'teams#update'
+
   delete 'teams/:id' => 'teams#destroy', as: :team
 
   

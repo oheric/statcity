@@ -20,7 +20,7 @@ button{
 
 #navbar{
   float: left;
-  width: 180px;
+  width: 140px;
   height: 100%;
   clear: both;
 }
@@ -86,7 +86,7 @@ text {
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%=link_to "Home", root_path%><span class="sr-only">(current)</span></a></li>        
+        <li class="active"><%=link_to "SC", root_path%><span class="sr-only">(current)</span></a></li>        
           
         <% @teams.each do |t| %>
       
@@ -192,7 +192,7 @@ d3.select(self.frameElement).style("height", diameter + "px");
 <!-- url_for("http://sports.yahoo.com/nba/players/" + p.yahooid.to_s + "/")  -->
 </div>
 
-<!-- pulling from the api -->
+<!-- pulling from the api and using the data to come up with average fanduel points. Not incorporated into app because we did not get around to using websockets to update the graph dynamically. Also, the data does not contain Yahoo Player Ids, which would have been useful when establishing Nokogiri's url.  -->
 
 <% if @stats %>
 <% @stats.each do |s|%>
@@ -203,6 +203,8 @@ d3.select(self.frameElement).style("height", diameter + "px");
 
 <%end%>
 <%end%>
+
+
 
 
 

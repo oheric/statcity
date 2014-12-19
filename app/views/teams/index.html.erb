@@ -13,7 +13,7 @@
       <tr>
         <td><%= team.teamname %></td>
       <td><%= link_to 'Show', showteam_path(:team => team.id)%></td>
-   
+   <td><%= link_to 'Edit', editteam_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
