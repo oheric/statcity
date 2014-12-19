@@ -193,7 +193,7 @@ d3.select(self.frameElement).style("height", diameter + "px");
 <% @stats.each do |s|%>
 <%= s['firstname']%> <%=s['lastname']%>
 
-<% playerstats = s['ppg'].to_f + (s['reb'].to_f * 1.2) + (s['ast'].to_i * 1.5) %>
+<% playerstats = s['ppg'].to_f + (s['reb'].to_f * 1.2) + (s['ast'].to_i * 1.5) + (s['blk'].to_f * 2) + (s['stl'].to_f * 2) - (s['to'].to_f) %>
 <%= playerstats.round(2) %>
 
 <%end%>
