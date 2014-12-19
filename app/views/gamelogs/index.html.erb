@@ -19,13 +19,14 @@ button{
 }
 
 #navbar{
-  float: right;
-  width: 60%;
+  float: left;
+  width: 180px;
   height: 100%;
+  clear: both;
 }
 
 #d3{
-  clear: both;
+  float: left;
 }
 
 text {
@@ -43,25 +44,28 @@ text {
   width: 160px;
   font-size: 42px;
   padding: 0px 0px 0px 20px;
-
-
 }
 
 #description{
-  
-  padding: 00px 0px 0px 20px;
-  float: left;
-  clear: both;
   font-family: Helvetica;
+}
 
+#together{
+  float:right;
+  padding: 0 80px 0 0;
+}
+
+#logodiv{
+  width: 100%;
+  height: 100px;
 }
 
 </style>
 
-
+<div id="logodiv">
 <!-- logo image -->
 <img id="logo" src="../assets/skylinesmall1.png">
-
+</div>
 
 <div id="navbar">
 
@@ -114,20 +118,21 @@ text {
 <!-- navbar ends here -->
 
 <!-- date and time starts here-->
+<div id="together">
+    <div id="description"><em>NBA FanDuel Averages For:<em></div>
 
-<div id="description"><em>NBA FanDuel Averages For:<em></div>
+    <div id="date">
+    <%time = Time.new %>
+    <%= time.month%>/<%=time.day%>
 
-<div id="date">
-<%time = Time.new %>
-<%= time.month%>/<%=time.day%>
-
+    </div>
 </div>
 
 <!-- d3 graph starts here -->
 <div id="d3">
 <script>
 
-var diameter = 960,
+var diameter = 820,
     format = d3.format(",d"),
     color = d3.scale.category20c();
 
