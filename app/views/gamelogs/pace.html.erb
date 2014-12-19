@@ -7,13 +7,15 @@
 
 	<style type="text/css">
 
-	table{
-		text-align: center;
-	}
-
-	td{
-		padding: 4px;
-	}
+			body {
+			background: url('nba.jpg')no-repeat ;
+			background-size: cover;
+			height: 140px;
+			display:block;
+			padding:0 !important;
+			margin:0;
+			opacity: 0.9;
+		}
 		
 		
 	</style>
@@ -48,10 +50,11 @@
 
 
 
-<div>
-	<table>
+<div class = "animated fadeInDown">
+<div class="table-responsive">
+	<table class="table table-bordered">
 
-		<thead>
+		<thead class="playerstatshead">
 			<tr>
 			<th>Rank</th>
 			<th>Team</th>
@@ -68,7 +71,7 @@
 		</tr>
 			
 		</thead>
-		<tbody>
+		<tbody class="playerstatsbody">
 
 
 <% i = 0

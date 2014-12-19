@@ -5,13 +5,6 @@
 </head>
 <body>
 
-	<style type="text/css">
-		#playerheading{
-			font-size: 14px;
-			color: green;
-			font-family: Verdana;
-		}
-	</style>
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
@@ -26,8 +19,16 @@
 	<% pagina = agent.page%>
 	<%notes = pagina.search(".list-group-item")%>
 	<%notes.each do |lg| %>
+
+	<div class = "animated bounceInLeft">
 	<div id ="playerheading"><%=lg.at(".list-group-item-heading").text %></div>
-	<div><%=lg.at(".list-group-item-text").text%></div><br>
+	</div>
+	<div id="news">
+	<div class = "animated bounceInRight">
+	<div><%=lg.at(".list-group-item-text").text%></div>
+</div>
+</div>
+<br>
 	<%end%>
 
 	<% agent.page.link_with(:text => 'Next »').click %>

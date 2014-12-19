@@ -1,127 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<style>
+	
+			body {
+			background: url('nba.jpg')no-repeat ;
+			background-size: cover;
+			height: 140px;
+			display:block;
+			padding:0 !important;
+			margin:0;
+			opacity: 0.9;
+		}
+</style>
 </head>
 <body>
 
-<style type ="text/css">
-table, th, td{
-	border: 1px solid black
-}
-td {
-	padding: 8px;
-}
-
-#playerstats{
-	
-	color: black;
-	clear: both;
-	padding-left: 20px
-}
-
-#playerinfo{
-	font-size: 24px;
-	color: red;
-	padding-left: 20px
-}
-
-#bio{
-	font-family: Verdana;
-	padding-left: 20px
-}
-
-#avgstats{
-	font-size: 10px;
-	color: blue;
-	font-family: Verdana;
-	padding-left: 20px
-}
-
-#photo{
-	width: 345px;
-	height: 230px;
-	padding-left: 20px
-
-}
-
-#logo{
-	width: 70px;
-	height: 70px;
-	padding-left: 20px
-}
-
-#nostats{
-	font-size: 20px;
-	color: red
-}
-
-.backdiv{
-	font-size: 20px;
-	
-}
-
-#playernotes{
-	font-size: 20px;
-	height: 10px;
-	width: 140px;
-	float: left;
-
-}
-
-#playerusage{
-	font-size: 20px;
-	float: left;
-	width: 145px;
-}
-
-#pace{
-	font-size: 20px;
-	float:left;
-}
 
 
+	<% stats = [] %>
 
-</style>
+	<%if @playerstats != nil %>
+	<% @playerstats.each do |dc| %>
+	<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
 
-<% stats = [] %>
-
-<%if @playerstats != nil %>
-<% @playerstats.each do |dc| %>
-<% stats.push(dc.at_css("tbody").text.split(" ").each_slice(24).to_a) %>
-
-<%end%>
-<%end %>
-
-<div id="playerinfo">
-	<% if @playerinfo != nil %>
-<%= @playerinfo.text%>
-</div>
-<%end %>
-<div id="bio">
-	<% if @bio != nil %>
-<%= @bio.text %>
-</div>
-<%end %>
-<div id="avgstats">
-	<% if @avgstat != nil %>
-<%= @avgstat.text %>
-<div>
+	<%end%>
 	<%end %>
 
-<div id="logo" style="<%= @logo %>"></div>
+<div class = "animated fadeInDownBig">
+	<div id="playerinfo">
+		<% if @playerinfo != nil %>
+	<%= @playerinfo.text%>
+	</div>
+	<%end %>
+	<div id="bio">
+		<% if @bio != nil %>
+	<%= @bio.text %>
+	</div>
+	<%end %>
+	<div id="avgstats">
+		<% if @avgstat != nil %>
+	<%= @avgstat.text %>
+	</div>
+		<%end %>
 
-<div id="photo" style="<%= @photo %>"></div>
+	<div id="teamlogo" style="<%= @logo %>"></div>
 
-<div id="playernotes"><%= link_to "Player Notes", show_path%></div>
-<div id="playerusage"><%= link_to "Player Usage", playerusage_path %></div>
-<div id="pace"><%= link_to "Team Pace", pace_path %></div>
+	<div id="photo" style="<%= @photo %>"></div>
+</div>
 
+<div class= "NUP">
+			<%= link_to "Player Notes", show_path, {class: "NUP"}%>
+			<%= link_to "Player Usage", playerusage_path, {class: "NUP"} %>
+			<%= link_to "Team Pace", pace_path, {class: "NUP"} %>
+</div>
 
-<div id ="playerstats">
-<table>
+<div class = "animated pulse">
+<div id ="playerstats" class="table-responsive">
+<table class="table table-bordered">
 <thead>
-	<tr>
+	<tr class="playerstatshead">
 		<th>Date</th>
 		<th></th>
 	
@@ -153,7 +91,7 @@ td {
 
 
 
-<tbody>
+<tbody class="playerstatsbody">
 	<% if stats[0] == nil %>
 	<div id ="nostats"><%= "Player has not played this season." %></div><br>
 	<% else stats[0].each do |i|%>
