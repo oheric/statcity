@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fanduel is the largest daily fantasy sports site, where users build a team and compete with other users for cash prizes. The users that have created teams with the highest total statistical output on that day are the winners. 
 
-Things you may want to cover:
+StatCity seeks to help the users of these kind of sites by displaying stats and other relevent information in a clear way. StatCity uses the Nokogiri and Mechanize gems to scrape the Yahoo Sports, ESPN, and FleaFlicker sites for NBA player stats and player information. This data is stored to the database on the StatCityAPI app, and this API is then pulled into our StatCity app with HTTParty. We use this data to calculate a player's FanDuel points, and display it on a D3 graph.  
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+We decided to build our own API because other APIs with this type of information charge a fee. 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
