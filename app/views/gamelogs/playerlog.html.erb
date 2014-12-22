@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 </head>
 <body>
-
-
 
 	<% stats = [] %>
 
@@ -39,9 +36,9 @@
 </div>
 
 <div class= "NUP">
-			<%= link_to "Player Notes", show_path, {class: "NUP"}%>
-			<%= link_to "Player Usage", playerusage_path, {class: "NUP"} %>
-			<%= link_to "Team Pace", pace_path, {class: "NUP"} %>
+	<%= link_to "Player Notes", show_path, {class: "NUP"}%>
+	<%= link_to "Player Usage", playerusage_path, {class: "NUP"} %>
+	<%= link_to "Team Pace", pace_path, {class: "NUP"} %>
 </div>
 
 <div class = "animated pulse">
@@ -78,30 +75,28 @@
 	</tr>
 </thead>
 
-
-
 <tbody class="playerstatsbody">
 	<% if stats[0] == nil %>
 	<div id ="nostats"><%= "Player has not played this season." %></div><br>
 	<% else stats[0].each do |i|%>
 	<% if i != stats[0].last %>
-<tr>
-		<% i.each do |b|%>
-	
-			<td><%=b %></td>
+		<tr>
+			<% i.each do |b|%>
+			
+				<td><%=b %></td>
 
+			<% end %>
+			
+			<!-- equation to convert values to fanduel points -->
+			<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
+			
+			<td><%=fanduel.round(2)%></td>
+
+			<%end %>
+			
+		</tr>
 	<% end %>
-	
-	<!-- equation to convert values to fanduel points -->
-	<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
-	
-	<td><%=fanduel.round(2)%></td>
-
-	<%end %>
-	
-</tr>
-<% end %>
-<%end%>
+	<%end%>
 
 </tbody>
 </table>

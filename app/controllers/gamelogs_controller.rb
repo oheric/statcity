@@ -43,19 +43,10 @@ def show
 	require 'nokogiri'
 	require 'open-uri'
 
-# Want to separate business logic here
-# url = 'http://sports.yahoo.com/nba/players/5007/gamelog/'
-# doc = Nokogiri::HTML(open(url))
-
-# @gamelogstats = doc.css('.data-container')
-
-
-	# @gamelogscraper = GameLogScraper.new('http://sports.yahoo.com/nba/players/5007/gamelog/')
-	# @gamelogstats = @gamelogscraper.get_class_items('.data-container')
 end
 
 
-# reading fro flare.json
+# reading from flare.json
 def load
 	@data = File.read("app/assets/javascripts/flare.json")
 	render :json => @data

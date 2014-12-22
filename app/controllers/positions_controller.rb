@@ -21,10 +21,10 @@ class PositionsController < ApplicationController
 	end
 
 	def destroy
-    @position.destroy
-    respond_to do |format|
-      format.html { redirect_to positions_url }
-      format.json { head :no_content }
+	    @position.destroy
+	    respond_to do |format|
+	    format.html { redirect_to positions_url }
+	    format.json { head :no_content }
     end
 end
 
