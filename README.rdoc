@@ -2,7 +2,7 @@
 
 Fanduel is the largest daily fantasy sports site, where users build a team and compete with other users for cash prizes. The users that have created teams with the highest total statistical output on that day are the winners. 
 
-StatCity seeks to help the users of these kind of sites by displaying stats and other relevent information in a clear way. StatCity uses the Nokogiri and Mechanize gems to scrape the Yahoo Sports, ESPN, and FleaFlicker sites for NBA player stats and player information. This data is stored to the database on the StatCityAPI app, and this API is then pulled into our StatCity app with HTTParty. We use this data to calculate a player's FanDuel points, and display it on a D3 graph.  
+StatCity seeks to help the users of these kinds of sites by displaying stats and other relevent information in a clear way. StatCity uses the Nokogiri and Mechanize gems to scrape the Yahoo Sports, ESPN, and FleaFlicker sites for NBA player stats and player information. This data is stored to the database on the StatCityAPI app, and this API is then pulled into our StatCity app with HTTParty. We use this data to calculate a player's FanDuel points, and display it on a D3 graph.  
 
 We decided to build our own API because other APIs with this type of information charge a fee. 
 
