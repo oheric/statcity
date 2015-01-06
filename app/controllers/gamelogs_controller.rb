@@ -51,5 +51,4 @@ def load
 	@data = File.read("app/assets/javascripts/flare.json")
 	render :json => @data
 end
-
 end
