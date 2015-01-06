@@ -87,16 +87,14 @@ text {
 
 table, th, td{
   text-align: center;
+
 }
 
 
 .table-responsive {
-  border: 3px solid red;
+  border: 1px solid black;
+  margin: 0px 10px 0px 10px
 }
-
-
-
-
 
 #playerstats{
   
@@ -109,39 +107,39 @@ table, th, td{
 
 #playerinfo{
   font-size: 40px;
-  color: #D4151F;
+  color: #4B4949;
   text-align: center;
   font-family: 'Fjalla One';
-  text-shadow: -1px 0 #1F64BF, 0 1px black, 1px 0 black, 0 -1px black;
+  // text-shadow: -1px 0 #1F64BF, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #bio{
   font-family: 'Fjalla One';
   text-align: center;
-  font-size: 20px;
+  font-size: 14px;
   color: black; 
 }
 
 #avgstats{
   font-size: 20px;
-  color: #1F64BF;
+  color: #05157F;
   font-family: 'Fjalla One';
   text-align: center;
-  text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
+  padding: 5px 0px 0px 0px
+  // text-shadow: -1px 0 white, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #photo{
-  width: 310px;
+  width: 350px;
   height: 220px;
-  margin-left: 445px;
-
+  margin: auto
 
 }
 
 #teamlogo{
   width: 70px;
   height: 70px;
-  margin-left: 590px
+  margin: auto
 
 }
 
@@ -153,35 +151,38 @@ table, th, td{
       text-decoration: underline;
     }
 
+#notesheader{
+  text-align: center;
+  font-family: 'Fjalla One';
+  text-decoration: underline
+}
+
 #playerheadingnews{
       font-size: 17px;
-      color: #1F64BF;
+      color: #05157F;
       font-family: 'Fjalla One';
-      
+      padding: 0px 0px 0px 10px;
       text-decoration: underline;
     }
 
 
 
 #news {
-      font-size: 18px;
+      font-size: 16px;
+      padding: 0px 0px 0px 20px;
       color: black;
-      font-family: 'Fjalla One';
-      text-decoration: underline;
-   
-
-      
+      font-family: 'Arial Narrow';    
 }
 
 
 .NUP {
     padding: 11px;
     font-size: 30px;
-    color: #D4151F;
+    color: #05157F;
     font-family: 'Fjalla One';
     text-align: center;
     text-decoration: underline;
-    text-shadow: -1px 0 #1F64BF, 0 1px black, 1px 0 black, 0 -1px black;
+    // text-shadow: -1px 0 #1F64BF, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .NUP:hover {
@@ -189,16 +190,17 @@ table, th, td{
 }
 
 .playerstatshead {
-  background-color: #1F64BF;
+  background-color: #4B4949;
   color: white;
-  font-size: 15px;
+  font-size: 12px;
   font-family: 'Fjalla One';
-  text-shadow: -1px 0 red, 0 1px black, 1px 0 black, 0 -1px black;
+  // text-shadow: -1px 0 red, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .playerstatsbody {
-  font-family: 'Fjalla One';
+  font-family: 'Arial';
   background-color: white;
+  font-size: 12px
 
 
 }

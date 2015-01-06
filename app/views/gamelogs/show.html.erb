@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
+	<h2 id="notesheader">Player Notes</h2></br>
 
 
 <!-- using the mechanize gem to scrape a page, click the next button to get data from the next page up to page 9, and displaying the heading and text -->
@@ -22,15 +23,15 @@
 	<%notes = pagina.search(".list-group-item")%>
 	<%notes.each do |lg| %>
 
-	<div class = "animated bounceInLeft">
+	<div class = "animated fadeIn">
 	<div id ="playerheadingnews"><%=lg.at(".list-group-item-heading").text %></div>
-	</div>
-	<blockquote>
+
+	<!-- <blockquote> -->
 		<div id="news">
-		<div class = "animated bounceInRight">
+		
 			<div><%=lg.at(".list-group-item-text").text%></div>
 		</div>
-	</blockquote> 
+
 		</div>
 		<br>
 	<%end%>

@@ -13,7 +13,7 @@
 	<%end%>
 	<%end %>
 
-<div class = "animated fadeInDownBig">
+<!-- <div class = "animated fadeInDownBig"> -->
 	<div id="playerinfo">
 		<% if @playerinfo != nil %>
 	<%= @playerinfo.text%>
@@ -33,7 +33,7 @@
 	<div id="teamlogo" style="<%= @logo %>"></div>
 
 	<div id="photo" style="<%= @photo %>"></div>
-</div>
+<!-- </div> -->
 
 <div class= "NUP">
 	<%= link_to "Player Notes", show_path, {class: "NUP"}%>
@@ -41,7 +41,7 @@
 	<%= link_to "Team Pace", pace_path, {class: "NUP"} %>
 </div>
 
-<div class = "animated pulse">
+<!-- <div class = "animated pulse"> -->
 <div id ="playerstats" class="table-responsive">
 <table class="table table-bordered">
 <thead>
@@ -90,7 +90,7 @@
 			<!-- equation to convert values to fanduel points -->
 			<% fanduel = i.at(23).to_i + ((i.at(17).to_i) * 1.2) + ((i.at(18).to_i) * 1.5) + ((i.at(21).to_i) * 2) + ((i.at(20).to_i) * 2) - i.at(19).to_i %>
 			
-			<td><%=fanduel.round(2)%></td>
+			<td style="color:#05157F"><strong><%=fanduel.round(2)%></strong></td>
 
 			<%end %>
 			
@@ -104,7 +104,7 @@
 
 <br>
 
-<div class="backdiv"><%= link_to "Back", root_path %></div>
+<!-- <div class="backdiv"><%= link_to "Back", root_path %></div> -->
 	
 </body>
 </html>
