@@ -19,7 +19,7 @@ def playerlog
 	if params[:playerid]
 		search_query = URI.escape(params[:playerid])
 	# @players.each do |p| 
-	url = "http://sports.yahoo.com/nba/players/" + search_query.to_s + "/gamelog/"
+	url = "https://sports.yahoo.com/nba/players/" + search_query.to_s + "/gamelog/"
 	
 # nokogiri information	
 	doc = Nokogiri::HTML(open(url))

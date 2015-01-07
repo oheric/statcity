@@ -7,7 +7,7 @@
 
 	<% require 'nokogiri' %>
 	<% require 'open-uri' %>
-	<% url = "http://sports.yahoo.com/nba/players?type=position&c=NBA&pos=PG" %>
+	<% url = "https://sports.yahoo.com/nba/players?type=position&c=NBA&pos=PG" %>
 	<% doc = Nokogiri::HTML(open(url)) %>
 
 	<% playerlist = [] %>
